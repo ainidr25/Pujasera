@@ -1,0 +1,92 @@
+POST http://localhost:3001/barang
+Content-Type: application/json
+
+{
+    "NamaBarang": "Seblak",
+    "Satuan": "Pcs",
+    "HargaSatuan": 15000.00,
+    "Stok": 50
+}
+
+###update barang
+PATCH http://localhost:3001/barang/1
+Content-Type: application/json
+
+{
+    "NamaBarang": "Cireng isi Ayam",
+    "Satuan": "Buah",
+    "HargaSatuan": 1600.75,
+    "Stok": 8
+}
+
+### Find All
+GET http://localhost:3001/barang
+
+### Find One
+GET http://localhost:3001/barang/1
+
+### Delete
+DELETE http://localhost:3001/barang/3
+
+### Create
+POST http://localhost:3001/kasir
+Content-Type: application/json
+
+{
+    "Nama": "Falaah",
+    "HP": "085237567887"
+}
+
+### Find All
+GET http://localhost:3001/kasir
+
+### Find One
+GET http://localhost:3001/kasir/1
+
+### Delete
+DELETE http://localhost:3001/kasir/2
+
+### Create
+POST http://localhost:3001/tenan
+Content-Type: application/json
+
+{
+    "NamaTenan": "Funny",
+    "HP": "083234547289"
+}
+
+### Find All
+GET http://localhost:3001/tenan
+
+### Find One
+GET http://localhost:3001/tenan/1
+
+### Delete
+DELETE http://localhost:3001/tenan/2
+
+### Create
+POST http://localhost:3001/tenan
+Content-Type: application/json
+
+{
+    "KodeTenan": 1,
+    "KodeKasir": 1,
+    "TglNota": "2023-11-29",
+    "JamNota": "12:30:00",
+    "JumlahBelanja": 15000.00,
+    "Diskon": 0,
+    "Total": 15000.00
+}
+
+### Find All
+GET http://localhost:3001/nota
+
+### Find One
+GET http://localhost:3001/nota/1
+
+### Delete
+DELETE http://localhost:3001/nota/2
+
+
+
+
