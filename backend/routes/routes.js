@@ -1,45 +1,11 @@
 import express from 'express';
-import {
-  createBarang,
-  showAllBarang,
-  getBarangById,
-  updateBarang,
-  deleteBarang,
-} from '../controllers/BarangController.js';
-
-import {
-  createKasir,
-  showAllKasir,
-  getKasirById,
-  updateKasir,
-  deleteKasir,
-} from '../controllers/KasirController.js';
-
-import {
-  createTenan,
-  showAllTenan,
-  getTenanById,
-  updateTenan,
-  deleteTenan,
-} from '../controllers/TenanController.js';
-
-import {
-  createNota,
-  showAllNota,
-  getNotaById,
-  updateNota,
-  deleteNota,
-} from '../controllers/NotaController.js';
-
-import {
-  createBarangNota,
-  getBarangNota,
-  updateBarangNota,
-  deleteBarangNota,
-} from '../controllers/BarangNotaController.js';
+import { createBarang, showAllBarang, getBarangById, updateBarang, deleteBarang,} from '../controllers/BarangController.js';
+import { createKasir, showAllKasir, getKasirById, updateKasir, deleteKasir,} from '../controllers/KasirController.js';
+import { createTenan, showAllTenan, getTenanById, updateTenan, deleteTenan,} from '../controllers/TenanController.js';
+import { createNota, showAllNota, getNotaById, updateNota, deleteNota,} from '../controllers/NotaController.js';
+import { createBarangNota, showAllBarangNota, getBarangNotaById, updateBarangNota, deleteBarangNota,} from '../controllers/BarangNotaController.js';
 
 const router = express.Router();
-
 // Barang
 router.post('/barang', createBarang);
 router.get('/barang', showAllBarang);
@@ -70,8 +36,9 @@ router.delete('/nota/:kodeNota', deleteNota);
 
 // BarangNota
 router.post('/barangNota', createBarangNota);
-router.get('/barangNota/:kodeNota/:kodeBarang', getBarangNota);
-router.patch('/barangNota/:kodeNota/:kodeBarang', updateBarangNota);
-router.delete('/barangNota/:kodeNota/:kodeBarang', deleteBarangNota);
+router.get('/barangNota', showAllBarangNota);
+router.get('/barangNota/:kodeBarangNota', getBarangNotaById);
+router.patch('/barangNota/:kodeBarangNota/:kodeBarang', updateBarangNota);
+router.delete('/barangNota/:kodeBarangNota/:kodeBarang', deleteBarangNota);
 
 export default router;

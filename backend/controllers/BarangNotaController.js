@@ -10,7 +10,17 @@ export const createBarangNota = async (req, res) => {
     }
 }
 
-export const getBarangNota = async (req, res) => {
+export const showAllBarangNota = async (req, res) => {
+    try {
+      const AllBarangNota = await BarangNota.findAll();
+      res.status(200).json(AllBarangNota);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).json({ error: 'Terjadi kesalahan dalam mengambil data Barang.' });
+    }
+  };
+
+export const getBarangNotaById = async (req, res) => {
     const { kodeNota, kodeBarang } = req.params;
     try {
         const barangNota = await BarangNota.findOne({

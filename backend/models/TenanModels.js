@@ -19,6 +19,7 @@ const Tenan = db.define('Tenan', {
 });
 
 export default Tenan;
+
 (async () => {
     await db.sync();
 })();

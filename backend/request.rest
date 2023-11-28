@@ -1,40 +1,46 @@
+##CREATE BARANG
 POST http://localhost:3001/barang
 Content-Type: application/json
 
 {
-    "NamaBarang": "Seblak",
+    "NamaBarang": "Susu Ultra Aini Diah",
     "Satuan": "Pcs",
-    "HargaSatuan": 15000.00,
-    "Stok": 50
+    "HargaSatuan": 5000.00,
+    "Stok": 100
 }
 
 ###update barang
-PATCH http://localhost:3001/barang/1
+PATCH http://localhost:3001/barang/4
 Content-Type: application/json
 
 {
-    "NamaBarang": "Cireng isi Ayam",
-    "Satuan": "Buah",
-    "HargaSatuan": 1600.75,
-    "Stok": 8
+    "HargaSatuan": 4000.00
 }
 
 ### Find All
 GET http://localhost:3001/barang
 
 ### Find One
-GET http://localhost:3001/barang/1
+GET http://localhost:3001/barang/4
 
 ### Delete
-DELETE http://localhost:3001/barang/3
+DELETE http://localhost:3001/barang/5
 
-### Create
+### Create KASIR
 POST http://localhost:3001/kasir
 Content-Type: application/json
 
 {
     "Nama": "Falaah",
     "HP": "085237567887"
+}
+
+###update KASIR
+PATCH http://localhost:3001/kasir/1
+Content-Type: application/json
+
+{
+    "HP": "08211524033444"
 }
 
 ### Find All
@@ -44,15 +50,24 @@ GET http://localhost:3001/kasir
 GET http://localhost:3001/kasir/1
 
 ### Delete
-DELETE http://localhost:3001/kasir/2
+DELETE http://localhost:3001/kasir/3
 
-### Create
+### Create TENAN
 POST http://localhost:3001/tenan
 Content-Type: application/json
 
 {
-    "NamaTenan": "Funny",
-    "HP": "083234547289"
+    "NamaTenan": "Dream",
+    "HP": "081234547289"
+}
+
+
+###update TENAN
+PATCH http://localhost:3001/tenan/1
+Content-Type: application/json
+
+{
+    "HP": "08211524033444"
 }
 
 ### Find All
@@ -62,20 +77,20 @@ GET http://localhost:3001/tenan
 GET http://localhost:3001/tenan/1
 
 ### Delete
-DELETE http://localhost:3001/tenan/2
+DELETE http://localhost:3001/tenan/3
 
-### Create
-POST http://localhost:3001/tenan
+### Create NOTA
+POST http://localhost:3001/nota
 Content-Type: application/json
 
 {
-    "KodeTenan": 1,
+    "KodeTenan": 3,
     "KodeKasir": 1,
     "TglNota": "2023-11-29",
     "JamNota": "12:30:00",
-    "JumlahBelanja": 15000.00,
+    "JumlahBelanja": 45000.00,
     "Diskon": 0,
-    "Total": 15000.00
+    "Total": 45000.00
 }
 
 ### Find All
@@ -86,6 +101,29 @@ GET http://localhost:3001/nota/1
 
 ### Delete
 DELETE http://localhost:3001/nota/2
+
+### CREATE BARANG NOTA
+POST http://localhost:3001/barangNota
+Content-Type: application/json
+
+{
+    "KodeNota": 1,
+    "KodeBarang": 1,
+    "JumlahBarang": 5,
+    "HargaSatuan": 20000.00,
+    "Jumlah": 100000.00
+}
+
+### Find All
+GET http://localhost:3001/barangNota
+
+### Find One
+GET http://localhost:3001/barangNota/1
+
+### Delete
+DELETE http://localhost:3001/barangNota/1/1
+
+
 
 
 
